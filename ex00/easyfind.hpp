@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
+/*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 23:19:11 by teddybandam       #+#    #+#             */
-/*   Updated: 2024/11/08 23:20:31 by teddybandam      ###   ########.fr       */
+/*   Updated: 2024/11/09 17:10:17 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,19 @@
 #include <exception>
 #include <iterator>
 
-// Exception personnalisée pour l'absence d'élément trouvé
-class NotFoundException : public std::exception {
-public:
-    const char* what() const noexcept override; // ?????
+
+/* Exception class for element not found */
+
+class NotFoundException : public std::exception 
+{
+    public:
+        const char* what() const throw();
 };
 
-// Déclaration de la fonction template
+/* Method template */
 template <typename T>
 typename T::iterator easyfind(T& container, int nb);
 
-// Inclusion de l'implémentation de la fonction template
 #include "easyfind.tpp"
 
 #endif
