@@ -1,10 +1,7 @@
-#include <algorithm>    std::find
+**ex00**
 
-But : Rechercher la première occurrence 
-d'un entier dans un container
-de type T.
-
-
-Divers : 
-- Les container : std::vector, std::list, std::deque
-- Container associatif : std::map
+```c
+std::vector : rapide pour l'accès par indice et ajout en fin.
+std::list : rapide pour les insertions/suppressions partout, mais lent pour l'accès par indice.
+std::deque : rapide pour les insertions/suppressions aux deux extrémités, mais un peu moins performant pour l'accès par indice que std::vector.
+```

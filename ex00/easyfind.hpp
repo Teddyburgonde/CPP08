@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 23:19:11 by teddybandam       #+#    #+#             */
-/*   Updated: 2024/11/09 18:59:28 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/09 19:49:33 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 #include <exception>
 #include <iterator>
 #include <iostream>
+ #include <algorithm> 
 
 
 /* Exception class for element not found */
-
 class NotFoundException : public std::exception 
 {
     public:
