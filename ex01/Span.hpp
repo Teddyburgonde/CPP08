@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 20:38:43 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/09 20:53:27 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/09 23:27:37 by teddybandam      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,25 @@
 
 #include <iostream>
 #include <exception>
+#include <vector>
+#include <algorithm>
 
 class Span
 {
 	public: /* Canonical form */
 		Span();
-		Span(int n);
-		Span( Span const & cpy);
+		Span(size_t n);
+		Span(const Span &cpy);
 		~Span();
-		Span & operator=(Span const & rhs);
+		Span & operator=(const Span &rhs);
 	
 	public : /* Method */
 		void addNumber(int n);
-		int shortestSpan();
-		int longestSpan();
+		int shortestSpan() const;
+		int longestSpan() const;
+		template <typename Iterator>
+    	void addRange(Iterator begin, Iterator end);
+		
 
 	public : /* Exception */
 		class SpanException : public std::exception
@@ -46,32 +51,14 @@ class Span
 			public:
 				virtual const char *what() const throw();
 		};
-		class SpanLongException : public SpanException
-		{
-			public:
-				virtual const char *what() const throw();
-		};
 
 	private:
-		int _n;
-		int _size;
-		//int *_array;
-		//int _index;
+		std::vector<int> _numbers; // contenur pour stocker les entiers 
+		size_t _maxSize; // Capacité maximale du Span 
 	
 	public: 
 		int getN() const;
 		int getSize() const;
-		//int* getArray() const;
-		//int getIndex() const;
-
 };
-
-
-
-
-
-
-
-
 
 #endif 

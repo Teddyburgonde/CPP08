@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 20:48:11 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/09 20:54:20 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/09 23:31:01 by teddybandam      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 Span::Span(){}
 
-Span::Span(int n) : _n(n)
-{
-	
-}
+Span::Span(size_t n) : _maxSize(n){}
 
-Span::Span( Span const & cpy)
+Span::Span(const Span &cpy)
 {
 	*this = cpy;
 }
 
 Span::~Span(){}
 
-Span & Span::operator=(Span const & rhs)
+Span & Span::operator=(const Span &rhs)
 {
 	if (this != &rhs)
 	{
-		_n = rhs._n;
+		this->_numbers = rhs._numbers;
+		this->_maxSize = rhs._maxSize;
 	}
 	return (*this);
 }
+
+// void Span::addNumber(int n)
