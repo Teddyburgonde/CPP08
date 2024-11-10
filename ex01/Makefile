@@ -12,7 +12,7 @@ CFLAGS = -Wall -Wextra -Werror -g -std=c++98
 
 #================== SOURCES =================#
 
-SRCS =  span.cpp \
+SRCS =  Span.cpp \
 		main.cpp
 
 #============== OBJECT FILES ================#
