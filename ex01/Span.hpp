@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 20:38:43 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/10 09:55:54 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/10 10:23:55 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class Span
 		
 
 	public : /* Exception */
-		class SpanException : public std::exception
+		class SpanException : public std::exception // ??
 		{
 			public:
 				virtual const char *what() const throw();

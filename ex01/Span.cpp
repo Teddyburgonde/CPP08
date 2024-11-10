@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 20:48:11 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/10 10:16:47 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/10 18:53:04 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,12 @@ int Span::longestSpan()
 	return (maxDifference);
 }
 
+template <typename Iterator>
+void addRange(Iterator begin, Iterator end)
+{
+		
+}
+
 const char* Span::SpanFullException::what() const throw()
 {
     return "Span is full. Max capacity reached.";
@@ -84,7 +90,7 @@ const char* Span::SpanShortException::what() const throw()
 	return "There are less than two elements in the container.";
 }
 
-const char* Span::SpanException::what() const throw()
+const char* Span::SpanException::what() const throw() // ???
 {
 	return "//";
 }
