@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 20:48:11 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/10 09:56:07 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/10 10:16:47 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,24 @@ int Span::shortestSpan()
 	for (size_t i = 0; i < _numbers.size() - 1; i++)
 	{
 		tmp = _numbers[i + 1] - _numbers[i];
-		if (tmp <= minDifference)
+		if (tmp < minDifference)
 			minDifference = tmp;
 	} 
 	return (minDifference);
+}
+
+int Span::longestSpan()
+{
+	int maxDifference;
+	int tmp;
+
+	maxDifference = 0;
+	tmp = 0;
+	if (_numbers.size() < 2)
+		throw SpanShortException();
+	std::sort(_numbers.begin(), _numbers.end());
+	maxDifference = _numbers.back() - _numbers.front();
+	return (maxDifference);
 }
 
 const char* Span::SpanFullException::what() const throw()

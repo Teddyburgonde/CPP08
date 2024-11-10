@@ -6,7 +6,7 @@
 /*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 08:25:18 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/10 10:08:20 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/10 10:19:37 by tebandam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,29 @@ int	main()
 	// 		{
 	// 			std::cerr << e.what() << std::endl;
 	// 		}
+	// }
+
+
+
+	// /* Test function longestSpan() */
+	// {
+	// 	Span sp(5);
+	// 	try 
+	// 	{
+	// 		int valueHigh;
+
+	// 		valueHigh = 0;
+	// 		sp.addNumber(3);
+	// 		sp.addNumber(7);
+	// 		sp.addNumber(10);
+	// 		sp.addNumber(20);	
+	// 		sp.addNumber(12);
+	// 		valueHigh = sp.longestSpan();
+	// 		std::cout << valueHigh << std::endl;
+	// 	} 
+	// 	catch (std::exception &e) 
+	// 	{
+	// 		std::cerr << e.what() << std::endl;
+	// 	}
 	// }
 }
