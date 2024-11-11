@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tebandam <tebandam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: teddybandama <teddybandama@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 20:38:43 by tebandam          #+#    #+#             */
-/*   Updated: 2024/11/10 10:23:55 by tebandam         ###   ########.fr       */
+/*   Updated: 2024/11/11 10:32:40 by teddybandam      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <exception>
 #include <vector>
 #include <algorithm>
+#include <iterator>
 
 class Span
 {
@@ -36,29 +37,40 @@ class Span
 		
 
 	public : /* Exception */
-		class SpanException : public std::exception // ??
+		class SpanFullException : public std::exception
 		{
 			public:
 				virtual const char *what() const throw();
 		};
-		class SpanFullException : public SpanException
-		{
-			public:
-				virtual const char *what() const throw();
-		};
-		class SpanShortException : public SpanException
+		class SpanShortException : public std::exception
 		{
 			public:
 				virtual const char *what() const throw();
 		};
 
 	private:
-		std::vector<int> _numbers; // contenur pour stocker les entiers 
-		size_t _maxSize; // Capacité maximale du Span 
-	
-	public: 
-		int getN() const;
-		int getSize() const;
+		std::vector<int> _numbers;
+		size_t _maxSize;
+	public :
+		void printNumbers() const;
 };
+
+
+template <typename Iterator>
+void Span::addRange(Iterator begin, Iterator end)
+{
+    int rangeSize = std::distance(begin, end);
+    if (rangeSize == 0) 
+        return;
+
+    if (_numbers.size() == _maxSize)
+        throw Span::SpanFullException();
+
+    int remainingCapacity = _maxSize - _numbers.size();
+    if (rangeSize > remainingCapacity)
+        throw Span::SpanFullException();
+
+    _numbers.insert(_numbers.end(), begin, end);
+}
 
 #endif 

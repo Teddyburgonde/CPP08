@@ -41,4 +41,25 @@ Option bonus :
 - Implémenter une méthode pour remplir le Span avec une plage d'itérateurs 
 (c'est-à-dire, ajouter plusieurs éléments en une seule fois).
 
+template <typename Iterator>
+void addRange(Iterator begin, Iterator end)
+{
+	int	rangeSize;
+	int remainingCapacity;
+	 // Étape 1 : Calculer la taille de la plage
+	rangeSize = std::distance(begin, end);
+	if (rangeSize == 0) 
+        return ;
+	// Étape 2 : Vérifie si le conteneur est déjà plein
+	if (_number.size() == _maxsize)
+		throw SpanFullException();
+	// Étape 3 : Calcule la capacité restante
+	remainingCapacity = _max_size - _number.size();
+	// Étape 4 : Vérifie si on a assez de place pour ajouter la plage
+	if (rangeSize > remainingCapacity)
+		throw SpanFullException();
+	// Étape 5 : Insère les éléments
+	_number.insert(_number.end(), begin, end);
+}
+
 ```
