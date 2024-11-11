@@ -63,3 +63,11 @@ void addRange(Iterator begin, Iterator end)
 }
 
 ```
+
+**ex02**
+
+On veut rendre le conteneur std::stack iterable, mais par défaut, 
+std::stack ne permet pas d'itérer sur ses éléments.
+Sous le capot std::stack utilise un autre conteneur ( comme std::deque) pour 
+stocker les elements.
+
