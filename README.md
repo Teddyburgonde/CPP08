@@ -71,3 +71,14 @@ std::stack ne permet pas d'itérer sur ses éléments.
 Sous le capot std::stack utilise un autre conteneur ( comme std::deque) pour 
 stocker les elements.
 
+            i   interator
+std::vector	Oui	Non (facultatif)
+std::deque	Oui	Non (facultatif)
+std::list	Non	Oui
+std::set	Non	Oui
+std::map	Non	Oui
+
+Même si le conteneur sous-jacent par défaut de std::stack est un std::deque, la classe std::stack elle-même ne permet pas l'accès par indice.
+
+
+
